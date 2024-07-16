@@ -20,6 +20,7 @@ wss.on("connection", (ws) => {
 
   ws.on("message", (messageRaw) => {
     const message = JSON.parse(messageRaw.toString());
+    console.log("Received message", message);
     if (message.type === "score") {
       gameState = {
         ...gameState,
